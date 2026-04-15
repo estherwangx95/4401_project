@@ -32,7 +32,7 @@ The team will primarily communicate through Microsoft Teams, using both video me
 Meetings will be held on an as-needed basis, depending on the progress of the project. The preferred format is online, although face-to-face meetings may be arranged when necessary. A summary of each meeting will be shared in the group chat for reference and continuity.
 
 #### Accountability & Progress Tracking
-The project will be hosted on GitHub, where progress will be tracked and managed. Clear deadlines will be established, ensuring that each member is accountable for completing their assigned work on time.
+The project will be hosted on **GitHub**, where progress will be tracked and managed. Clear deadlines will be established, ensuring that each member is accountable for completing their assigned work on time.
 
 
 ### 4.1.2 Version Control Strategy
