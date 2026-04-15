@@ -1,5 +1,3 @@
-# 4. Phase 1 tasks
-
 <div style="page-break-after: always;"></div>
 
 ## 4.4 Elicitation Interview 
