@@ -1,5 +1,7 @@
 # 4. Phase 1 tasks
 
+<div style="page-break-after: always;"></div>
+
 ## 4.4 Elicitation Interview 
 
 ### a) Supplemental Interview Questions  
@@ -11,7 +13,7 @@ The project brief identifies researchers broadly (honours, master’s, PhD stude
 These questions focus on the needs of PhD students fulfilling this role.
 
 
-### 1. Draft Saving and Auto-Save
+#### 1. Draft Saving and Auto-Save
 
 **Question:**  
 Would you like the system to allow you to save an ethics application as a draft and return to complete it later? Would you also expect an auto-save feature while working on long applications?
@@ -20,7 +22,7 @@ Would you like the system to allow you to save an ethics application as a draft 
 Ethics applications are time-consuming and may not be completed in one session. This question helps determine whether draft saving and auto-save features are needed to improve usability and prevent data loss.
 
 
-### 2. Managing Multiple Applications
+#### 2. Managing Multiple Applications
 
 **Question:**  
 If you need to manage an initial ethics application together with later amendments or extensions, what difficulties would you face? Would a dashboard showing status, deadlines, and required actions be helpful?
@@ -29,7 +31,7 @@ If you need to manage an initial ethics application together with later amendmen
 A principal researcher may manage multiple related activities or applications. The current process lacks clear tracking support. This question helps identify the need for dashboards, filtering, and status tracking.
 
 
-### 3. Clarity of Application Requirements
+#### 3. Clarity of Application Requirements
 
 **Question:**  
 Do you find the current application requirements clear, or do you often feel uncertain about what information is required? Would guidance such as templates, examples, or instructions be helpful?
@@ -38,7 +40,7 @@ Do you find the current application requirements clear, or do you often feel unc
 Applicants may be unsure about required information. This question evaluates whether additional guidance (templates, examples, instructions) is needed to improve clarity and reduce errors.
 
 
-### 4. Validation Before Submission
+#### 4. Validation Before Submission
 
 **Question:**  
 Would you prefer the system to automatically check for missing or incomplete sections before allowing submission?
@@ -47,7 +49,7 @@ Would you prefer the system to automatically check for missing or incomplete sec
 Incomplete applications can delay review. This question determines whether built-in validation is required to improve submission quality.
 
 
-### 5. Communication Channels
+#### 5. Communication Channels
 
 **Question:**  
 For communication related to an ethics application (e.g., clarification requests, revision feedback, decisions), would you expect interactions to occur within REMS, or through external tools such as email or Microsoft Teams?
@@ -56,7 +58,7 @@ For communication related to an ethics application (e.g., clarification requests
 Current communication occurs via email or informal channels. This question clarifies whether REMS should include internal communication or rely on external tools, helping define system scope and traceability.
 
 
-### 6. Notifications and Progress Updates
+#### 6. Notifications and Progress Updates
 
 **Question:**  
 How would you prefer to receive updates on the progress of your application: email notifications, a status dashboard, or both? Would reminder notifications for deadlines or revision requests be useful?
@@ -65,7 +67,7 @@ How would you prefer to receive updates on the progress of your application: ema
 Delays and lack of transparency are key issues. This question identifies preferred methods for progress tracking and deadline awareness.
 
 
-### 7. Team Permissions and Collaboration
+#### 7. Team Permissions and Collaboration
 
 **Question:**  
 If your research involves a supervisor or team members, should they be able to view the application, upload documents, or edit sections? What level of access control would you expect?
@@ -74,7 +76,7 @@ If your research involves a supervisor or team members, should they be able to v
 Ethics applications are collaborative, but access rights are unclear. This question helps determine the need for role-based permissions and collaboration features.
 
 
-### 8. Version Comparison and Revision Tracking
+#### 8. Version Comparison and Revision Tracking
 
 **Question:**  
 When revisions are requested, would you find it useful to compare previous and revised versions side by side? Would you like changes to be highlighted?
