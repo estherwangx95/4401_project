@@ -90,7 +90,7 @@ Revision processes can be unclear. This question evaluates the need for version 
 
 - **Date:** 08 April, 2026
 - **Time:** 17:00
-- **Venue:** Building 225 (GEOGRAPHY AND GEOLOGY), G09 Seminar Room, UWA Campus  
+- **Venue:** Building 225 (GEOGRAPHY AND GEOLOGY), G09 Seminar Room, UWA Campus 
 - **Duration:** 20 Minutes
 
 
