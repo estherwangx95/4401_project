@@ -13,7 +13,7 @@
 | Xing Wang | 23932778 | estherwangx95 |
 | Md Faraz Kabir Khan | 24427672 | farazkabir |
 | Robin Varughese  Mathew | 24702715 | robin20516 |
-| Bisha Babu Babu | 24741489 | bishababu1506-ops |
+| Bisha Babu | 24741489 | bishababu1506-ops |
 
 
 ---
@@ -412,33 +412,48 @@ The following requirements are written to be clear, testable, consistently struc
 
 These requirements were based on the REMS scenario and the interview results. Together, they describe a clear subsystem that supports the principal researcher in creating, submitting, revising, and tracking ethics applications. They also include important system constraints such as authentication, confidentiality, versioning, and audit trails.
 
-4.6 Use Case Diagram
+### Special Requirements (Non-Functional)
 
-a) Use case diagram:
+- All supporting documents must be stored with version control so that earlier versions remain accessible for audit purposes.
+- The application and all associated documents must only be visible to the submitting researcher, their nominated team members, and authorised administrative staff.
+- The completeness check at step 8 must complete within 3 seconds of the researcher clicking submit.
+- The system must maintain a full audit trail of all actions taken on the application, including saves, edits, and the final submission.
+
+### Assumptions
+- All users have reliable internet access and a valid email account.
+- The system can integrate with an external email service.
+- Researchers and team members have basic digital literacy.
+- Research teams operate in a trusted environment with minimal need for granular access control.
+- The system is accessed via modern web browsers.
+
+<div style="page-break-after: always; break-after: page;"></div>
+## 4.6 Use Case Modelling
+
+### a) Use case diagram:
 ![Use Case Diagram](Usecase.jpg)
 
-b) Use case description:
+### b) Use case description:
 
-Goal: To allow a researcher acting as principal investigator to complete and submit a research ethics application to the REMS for administrative review and subsequent ethics committee evaluation.
+#### Goal: 
+To allow a researcher acting as principal investigator to complete and submit a research ethics application to the REMS for administrative review and subsequent ethics committee evaluation.
 
-Actors:
+#### Actors:
 - Primary Actor: Researcher (PhD student as Principal Investigator)
 - Secondary Actor: Admin Officer
 
-Preconditions:
+#### Preconditions:
 - The researcher is registered and has a valid account in REMS.
 - The researcher has logged in successfully.
 - The researcher has prepared the necessary information about their research activity, including a description of the methodology, participant details, and any associated risks.
 - At least one supporting document (e.g. consent form, information sheet, or risk assessment) is ready for upload.
 
-Postconditions:
+#### Postconditions:
 - The ethics application is recorded in REMS with a unique application ID.
 - The application status is set to "Submitted -Pending Administrative Review."
 - The admin officer is notified of the new submission.
 - An audit trail entry is created recording the submission timestamp and the identity of the submitting researcher.
 
-
-Main Success Scenario
+#### Main Success Scenario
 
 1. The researcher navigates to the REMS dashboard and selects "Create New Application."
 2. The system displays an application form with sections for research description, methodology, participant information, risk assessment, and supporting documents.
@@ -451,8 +466,7 @@ Main Success Scenario
 9. The system accepts the submission, assigns a unique application ID, and sets the application status to "Submitted - Pending Administrative Review."
 10. The system sends an automated notification to the researcher confirming successful submission, and notifies the admin officer of the incoming application.
 
-
-Alternate Flow 1 - Incomplete Application
+#### Alternate Flow 1 - Incomplete Application
 
 At step 8, if the system's completeness check detects one or more mandatory fields that are empty or a required document that has not been uploaded:
 
@@ -460,9 +474,7 @@ At step 8, if the system's completeness check detects one or more mandatory fiel
 2. The system highlights the incomplete sections and displays a summary of what is missing.
 3. The researcher corrects the identified issues and returns to step 7.
 
-
-
-Alternate Flow 2 - Researcher Saves as Draft
+#### Alternate Flow 2 - Researcher Saves as Draft
 
 At any point between steps 3 and 7, the researcher may choose to save the application as a draft instead of submitting:
 
@@ -471,21 +483,10 @@ At any point between steps 3 and 7, the researcher may choose to save the applic
 3. The system confirms the save with a timestamp.
 4. The researcher may close the application and return to complete it in a later session. The use case resumes from step 2 when the researcher reopens the draft.
 
-
-
-Alternate Flow 3 — Session Timeout During Completion
+#### Alternate Flow 3 — Session Timeout During Completion
 
 At any point between steps 3 and 8, if the researcher's session expires due to inactivity:
 
 1. The system automatically saves any entered data as a draft before terminating the session.
 2. The researcher is redirected to the login page with a message indicating their session has expired and their progress has been saved.
 3. Upon logging back in, the researcher is presented with the option to resume the saved draft. The use case resumes from step 2.
-
-
-
-Special Requirements (Non-Functional)
-
-- All supporting documents must be stored with version control so that earlier versions remain accessible for audit purposes.
-- The application and all associated documents must only be visible to the submitting researcher, their nominated team members, and authorised administrative staff.
-- The completeness check at step 8 must complete within 3 seconds of the researcher clicking submit.
-- The system must maintain a full audit trail of all actions taken on the application, including saves, edits, and the final submission.
