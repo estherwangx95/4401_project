@@ -121,3 +121,7 @@ They benefit from reduced manual tracking (e.g., spreadsheets and emails), impro
 7.  As an administrative staff member, I want to assign applications to appropriate committee members, so that each application is reviewed by qualified reviewers.
 8.  As an administrative staff member, I want the system to maintain a record of all actions taken on applications, so that there is a clear audit trail for accountability and compliance.
 
+
+
+<div style="page-break-after: always; break-after: page;"></div>
+## 4.5 Requirements Specification 
