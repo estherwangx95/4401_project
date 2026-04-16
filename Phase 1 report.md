@@ -156,3 +156,6 @@ The following requirements are written to be clear, testable, consistently struc
 | NFR-03 | Non-functional | The system shall keep an audit trail of important actions, including draft creation, auto-save, submission, revision, resubmission, and status changes. |
 | NFR-04 | Non-functional | The system shall support file versioning so that current and previous versions of documents can be clearly identified and accessed. |
 | NFR-05 | Non-functional | The system shall send email notifications within a reasonable time after a status change, clarification request, or revision request is recorded in REMS. |
+
+
+These requirements were based on the REMS scenario and the interview results. Together, they describe a clear subsystem that supports the principal researcher in creating, submitting, revising, and tracking ethics applications. They also include important system constraints such as authentication, confidentiality, versioning, and audit trails.
