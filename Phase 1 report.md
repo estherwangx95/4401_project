@@ -124,4 +124,35 @@ They benefit from reduced manual tracking (e.g., spreadsheets and emails), impro
 
 
 <div style="page-break-after: always; break-after: page;"></div>
+
 ## 4.5 Requirements Specification 
+
+
+
+
+
+
+| ID | Type | Requirement |
+|---|---|---|
+| FR-01 | Functional | The system shall allow a principal researcher to create a new ethics application for a research activity involving human participants. |
+| FR-02 | Functional | The system shall require the principal researcher to enter required information before submission, including the project title, research description, methodology, participant risks, and research team details. |
+| FR-03 | Functional | The system shall allow the principal researcher to save an incomplete application as a draft and return to it later. |
+| FR-04 | Functional | The system shall automatically save the application while the principal researcher is working on it. |
+| FR-05 | Functional | The system shall allow the principal researcher to upload supporting documents as part of an ethics application. |
+| FR-06 | Functional | The system shall provide examples or guidance to help the principal researcher understand what information is needed in different parts of the application. |
+| FR-07 | Functional | The system shall perform basic validation before submission and tell the principal researcher if required fields or sections are missing. |
+| FR-08 | Functional | The system shall record the date and time when an application is submitted. |
+| FR-09 | Functional | The system shall show the current status of each application to the principal researcher, including draft, submitted, under review, revision requested, approved, conditionally approved, and rejected. |
+| FR-10 | Functional | The system shall provide a dashboard so the principal researcher can view multiple applications, amendments, or extensions and check their current status. |
+| FR-11 | Functional | The system shall allow the principal researcher to view clarification requests, revision requests, and decisions inside REMS. |
+| FR-12 | Functional | The system shall send email notifications to the principal researcher for important updates, including submission confirmation, revision requests, and final decisions. |
+| FR-13 | Functional | The system shall allow the principal researcher to edit and resubmit an application when clarification or revision has been requested. |
+| FR-14 | Functional | The system shall allow authorised research teammates to access the same application. |
+| FR-15 | Functional | The system shall allow authorised research teammates to view, edit, and upload documents to the shared application with the same level of access. |
+| FR-16 | Functional | The system shall store previous versions of application files and allow authorised users to open older versions of those files. |
+| FR-17 | Functional | The system shall require user authentication before any application can be created, viewed, edited, or submitted. |
+| NFR-01 | Non-functional | The system shall present forms, statuses, and guidance in a clear and consistent way so that the principal researcher can understand the process without needing help from administrative staff. |
+| NFR-02 | Non-functional | The system shall protect confidentiality by making sure that only authenticated and authorised users can access application information and supporting documents. |
+| NFR-03 | Non-functional | The system shall keep an audit trail of important actions, including draft creation, auto-save, submission, revision, resubmission, and status changes. |
+| NFR-04 | Non-functional | The system shall support file versioning so that current and previous versions of documents can be clearly identified and accessed. |
+| NFR-05 | Non-functional | The system shall send email notifications within a reasonable time after a status change, clarification request, or revision request is recorded in REMS. |
