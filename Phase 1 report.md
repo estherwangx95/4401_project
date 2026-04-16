@@ -127,9 +127,9 @@ They benefit from reduced manual tracking (e.g., spreadsheets and emails), impro
 
 ## 4.5 Requirements Specification 
 
+For this task, our group chose the subsystem ethics application creation, submission, revision, and tracking for a PhD student acting as the principal researcher. This is a suitable scope because it focuses on one clear part of REMS and matches our chosen stakeholder. This scope was further refined by the interview with our selected stakeholder, which highlighted the need for draft saving, auto-save, guidance examples, basic validation, dashboard and email updates, shared teammate access, and access to older file versions.
 
-
-
+The following requirements are written to be clear, testable, consistently structured, and uniquely identified, and each is labelled as either functional or non-functional.
 
 
 | ID | Type | Requirement |
