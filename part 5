@@ -80,3 +80,15 @@ could become poor. Therefore, the system should record the important application
 
 This design supports both usability and reliability. Researchers receive reminders through email, but they can still log in to REMS to see the official status, feedback, and history even if an email is delayed or missed.
 
+
+
+Overall Design Rationale
+
+Overall, the proposed architecture separates responsibilities according to the main non-functional requirements. The Application Management Service acts as the central coordinator for the ethics application lifecycle, including creation, saving, submission, revision, resubmission,
+and status updates. Around it, specialised components handle specific concerns: Authentication and Authorisation protects access, the Validation Service checks completeness, the Document Management and Versioning Service handles uploaded files and version history, the Notification Service manages user communication, and the Audit Trail Service records important actions.
+
+This modular structure is more suitable than placing all responsibilities inside one large component. It makes the system easier to understand, test, maintain, and extend. It also makes the architecture more consistent with the REMS workflow, where sensitive applications
+move through several states and require clear access control, traceability, document history, and communication with users.
+
+
+
