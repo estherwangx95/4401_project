@@ -47,3 +47,25 @@ as the application update. This means the application should not be successfully
 
 An alternative design would be asynchronous audit logging, where audit events are placed into a queue and written later. This would make the main workflow faster and reduce coupling between components. However, it creates a risk that audit records could be delayed or
 lost if the queue fails. For a compliance-related ethics system, this risk is not acceptable. Therefore, the chosen design prioritises correctness and traceability over maximum performance
+
+
+
+
+NFR-04: File Versioning — Justifying the Document Management and Versioning Service
+
+Ethics applications often include supporting documents, and these documents may be updated during the review or revision process. The system should not overwrite previous files because older versions may be needed for checking what was originally submitted, what was revised,
+or what was available to reviewers at a particular time.
+
+For this reason, the architecture includes a separate Document Management and Versioning Service. This component manages document uploads, file metadata, retrieval, and version history. When a researcher uploads a new version of a document, the old version should remain 
+accessible instead of being replaced. Each document version should be linked to an application, uploader, upload timestamp, and version number.
+
+The actual file content is stored in File/Object Storage, while document metadata is stored in the relational database. This separation is useful because files are usually larger and less structured than normal application records. The database can efficiently store and
+search metadata, while file storage can manage the actual uploaded documents.
+
+Keeping document versioning separate from the Application Management Service also reduces complexity. The Application Management Service only needs to coordinate the workflow, such as whether the application is in draft, submitted, under review, or revision requested.
+The Document Management and Versioning Service is responsible for ensuring that file versions remain consistent and traceable.
+
+
+
+
+
