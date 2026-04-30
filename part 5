@@ -32,3 +32,18 @@ authority. Authorised teammates may be allowed to view, edit, or upload supporti
 
 This design keeps access control centralised instead of spreading permission checks across every part of the system. It also makes the architecture easier to reason about during review. If future versions of REMS add more user types, such as ethics committee members or 
 external reviewers, the access model can be extended mainly within the Authentication and Authorisation component, rather than rewriting the whole application workflow.
+
+
+NFR-03: Audit Trail — Most Constraining Requirement
+
+Auditability is the most constraining non-functional requirement in this system because REMS handles formal ethics applications. The system must be able to show who performed an action, when the action happened, and what application or document was affected. Important 
+actions include draft creation, auto-save, manual saving, document upload, submission, resubmission, revision updates, status changes, and access to sensitive application records.
+
+This requirement affects the whole architecture because audit logging cannot be treated as an optional background feature. If an application status changes from “Draft” to “Submitted”, the system must also record the user identity and timestamp of that submission. If a 
+document is uploaded, the system must record which user uploaded it, which application it belongs to, and when it was uploaded. Without this information, the system would not be reliable for compliance, review, or later dispute resolution.
+
+For this reason, the architecture includes a dedicated Audit Trail Service. The Application Management Service triggers the Audit Trail Service whenever a significant state-changing action occurs. The audit record should be written as part of the same logical operation
+as the application update. This means the application should not be successfully submitted if the audit record cannot be created. This design keeps the application state and audit history consistent.
+
+An alternative design would be asynchronous audit logging, where audit events are placed into a queue and written later. This would make the main workflow faster and reduce coupling between components. However, it creates a risk that audit records could be delayed or
+lost if the queue fails. For a compliance-related ethics system, this risk is not acceptable. Therefore, the chosen design prioritises correctness and traceability over maximum performance
