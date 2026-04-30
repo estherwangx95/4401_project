@@ -67,5 +67,16 @@ The Document Management and Versioning Service is responsible for ensuring that 
 
 
 
+NFR-05: Timely Notifications — Supporting Communication Without Blocking the Workflow
 
+Timely notification is important because researchers need to know when something changes in their application. For example, they should be notified when an application is submitted successfully, when clarification is requested, when revision is required, or when a final
+decision is made.
+
+The architecture includes a dedicated Notification Service to handle this responsibility. This service creates in-system notifications and sends email notifications through an external email service. In-system notifications are important because REMS should remain the
+official place where users check application status and feedback. Email is useful as an additional reminder, but it should not be treated as the official record.
+
+This design avoids making the main application workflow depend too heavily on email delivery. Email services can be slow, unavailable, or unreliable. If the Application Management Service waited for email delivery before confirming a submission, the user experience 
+could become poor. Therefore, the system should record the important application status and notification record inside REMS first, then allow email dispatch to happen separately.
+
+This design supports both usability and reliability. Researchers receive reminders through email, but they can still log in to REMS to see the official status, feedback, and history even if an email is delayed or missed.
 
