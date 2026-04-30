@@ -1,3 +1,21 @@
 5. Non-Functional Requirements and Design Decisions
 
-Rather than discussing every non-functional requirement separately, this section focuses on the requirements that most strongly shaped the proposed REMS architecture. The most important concerns are auditability, confidentiality, usability, file versioning, and timely notifications. These concerns directly influenced why the system is divided into separate components such as the Authentication and Authorisation component,  Application Management Service, Validation Service, Document Management and Versioning Service, Notification Service, and Audit Trail Service.
+Rather than discussing every non-functional requirement separately, this section focuses on the requirements that most strongly shaped the proposed REMS architecture. The most important concerns are auditability, confidentiality, usability, file versioning,
+and timely notifications. These concerns directly influenced why the system is divided into separate components such as the Authentication and Authorisation component,  Application Management Service, Validation Service, Document Management and Versioning Service,
+Notification Service, and Audit Trail Service.
+
+
+NFR-01: Usability — Driving Responsibility Allocation
+
+Usability is important because researchers may not be familiar with the ethics application process. The system should help users create, save, submit, revise, and track applications without needing constant help from administrators. This requirement affects both the
+Web Interface and the backend design.
+
+The REMS Web Interface is responsible for presenting dashboards, application forms, guidance panels, upload controls, validation messages, and status tracking information. However, it does not own the core business rules. The frontend should not decide whether an 
+application is complete or whether it can move to the next status. Those decisions belong to the backend services.
+
+This separation supports usability because the Web Interface can focus on clear presentation and user feedback. For example, if a researcher submits an incomplete application, the interface should show exactly which fields or sections are missing. This is supported 
+by the Validation Service, which returns structured, field-level error information instead of a simple generic failure message.
+
+The Validation Service is separated from the Application Management Service because validation rules may change over time. For example, the university may later add new mandatory fields or supporting document requirements. If validation logic is isolated, these changes
+can be made without rewriting the whole application lifecycle. This also supports the requirement that completeness checking should be fast and understandable for users.
+
