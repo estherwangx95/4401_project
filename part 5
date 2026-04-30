@@ -19,3 +19,16 @@ by the Validation Service, which returns structured, field-level error informati
 The Validation Service is separated from the Application Management Service because validation rules may change over time. For example, the university may later add new mandatory fields or supporting document requirements. If validation logic is isolated, these changes
 can be made without rewriting the whole application lifecycle. This also supports the requirement that completeness checking should be fast and understandable for users.
 
+NFR-02: Confidentiality — Shaping the Access Architecture
+
+Confidentiality is also a major design driver because ethics applications may contain sensitive research information, participant details, risk assessments, supporting documents, and feedback from reviewers or administrators. Not every user should be able to see or change 
+every application. For example, a principal researcher should be able to create and submit their own application, but another unrelated researcher should not be able to access it.
+
+To address this, the architecture places the Authentication and Authorisation component between the REMS Web Interface and the backend services. All requests from users must first pass through this component before reaching the Application Management Service, Document 
+Management and Versioning Service, or any sensitive data. This creates a clear access-control boundary in the architecture.
+
+The design uses a simple role-based access model. The main roles include principal researcher, authorised teammate, admin officer, reviewer, and system administrator. The principal researcher has the strongest control over their own application, including submission 
+authority. Authorised teammates may be allowed to view, edit, or upload supporting documents, but they may not necessarily have permission to perform final submission. Admin officers and reviewers have access only to the applications relevant to their role.
+
+This design keeps access control centralised instead of spreading permission checks across every part of the system. It also makes the architecture easier to reason about during review. If future versions of REMS add more user types, such as ethics committee members or 
+external reviewers, the access model can be extended mainly within the Authentication and Authorisation component, rather than rewriting the whole application workflow.
